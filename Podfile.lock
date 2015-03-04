@@ -1,0 +1,121 @@
+PODS:
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - EasyIOS (2.2.2):
+    - EasyIOS/Easy (= 2.2.2)
+  - EasyIOS-Extention (1.2):
+    - EasyIOS-Extention/EasyExtention (= 1.2)
+  - EasyIOS-Extention/EasyExtention (1.2):
+    - IQKeyboardManager
+    - RegExCategories
+    - RMUniversalAlert
+    - TTTAttributedLabel
+    - UICKeyChainStore
+    - XAspect
+  - EasyIOS/Easy (2.2.2):
+    - AFNetworking
+    - FLKAutoLayout (= 0.1.1)
+    - FontIcon
+    - GCDObjC
+    - MBProgressHUD
+    - MojoDatabase
+    - ReactiveCocoa (= 2.4.4)
+    - TMCache
+    - UIActivityIndicator-for-SDWebImage
+  - FLKAutoLayout (0.1.1)
+  - FontIcon (1.0)
+  - GCDObjC (0.2.0)
+  - HMSegmentedControl (1.4.0)
+  - IQKeyboardManager (3.2.1.1)
+  - MBProgressHUD (0.9)
+  - MojoDatabase (1.4)
+  - ReactiveCocoa (2.4.4):
+    - ReactiveCocoa/UI (= 2.4.4)
+  - ReactiveCocoa/Core (2.4.4):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.4)
+  - ReactiveCocoa/UI (2.4.4):
+    - ReactiveCocoa/Core
+  - RegExCategories (1.0)
+  - RMUniversalAlert (0.6):
+    - RMUniversalAlert/Core (= 0.6)
+  - RMUniversalAlert/Core (0.6):
+    - UIActionSheet+Blocks (>= 0.8)
+    - UIAlertController+Blocks (>= 0.8)
+    - UIAlertView+Blocks (>= 0.8)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+  - TMCache (1.2.3)
+  - TTTAttributedLabel (1.13.1)
+  - UIActionSheet+Blocks (0.8.1)
+  - UIActivityIndicator-for-SDWebImage (1.2):
+    - SDWebImage (~> 3.7)
+  - UIAlertController+Blocks (0.8)
+  - UIAlertView+Blocks (0.8.1)
+  - UICKeyChainStore (2.0.3)
+  - XAspect (1.0.3):
+    - XAspect/Core (= 1.0.3)
+    - XAspect/Macros (= 1.0.3)
+  - XAspect/Core (1.0.3):
+    - XAspect/Macros
+  - XAspect/Macros (1.0.3)
+
+DEPENDENCIES:
+  - EasyIOS (from `https://github.com/zhuchaowe/EasyIOS.git`)
+  - EasyIOS-Extention (~> 1.2)
+  - HMSegmentedControl (~> 1.4.0)
+
+EXTERNAL SOURCES:
+  EasyIOS:
+    :git: https://github.com/zhuchaowe/EasyIOS.git
+
+CHECKOUT OPTIONS:
+  EasyIOS:
+    :commit: d925ac0bb067c6c551f7abe0400e50c2872539e6
+    :git: https://github.com/zhuchaowe/EasyIOS.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  EasyIOS: aa19de0f99a303cbb4ac71c67ca2a49110abf778
+  EasyIOS-Extention: 3bdce1c68af0762b2fe2bd31a2211b5e78095864
+  FLKAutoLayout: 9fa39aac2903b274fbeed6be74154cdb937a04fc
+  FontIcon: 26bc94735ea33d51e412a3eeb20f306b2527ce17
+  GCDObjC: 4221bab8503688aaee67e5930b58fe8c0ed1f9a9
+  HMSegmentedControl: c0517a8d4b80c978b8386f863f1c44729cfd7d6f
+  IQKeyboardManager: 4e83eef847c6f5edbd670284e50c7e3d643ebdb5
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  MojoDatabase: 0d2256d34b803169aa03e2ad4695a9a76441a5a9
+  ReactiveCocoa: 31119068e3dde866bd257cf74e1f06b4023bf387
+  RegExCategories: a6410301023ff81bd047c05fd8691d24ca5c7ea9
+  RMUniversalAlert: 29efbec1d069082dd851054042b934550bc70b45
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  TMCache: 11589ef8c40909114a5e60132711c9a559e01d97
+  TTTAttributedLabel: 71843ac4178e1ebd6b0950b54325146726a124ae
+  UIActionSheet+Blocks: c8b9c02f3d08964e8f7a4202f004a639c15eab80
+  UIActivityIndicator-for-SDWebImage: 8bd92c15280fbe54816448c6b14674145eee05c7
+  UIAlertController+Blocks: a02869a586a1e242accabc86beb5f08f00998a76
+  UIAlertView+Blocks: 0b749f1f7bd5131ff2233b30a406c1585a7171b2
+  UICKeyChainStore: 9b6ce74b89fc24e1879257eb51c002f7cc4a5b9b
+  XAspect: ac0f8b5725abcf5a343a272582ca74f3a9df8f89
+
+COCOAPODS: 0.35.0

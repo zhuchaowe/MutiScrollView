@@ -1,0 +1,10 @@
+//
+//  PrefixHeader.pch
+//  MutiScrollView
+//
+//  Created by zhuchao on 15/3/4.
+//  Copyright (c) 2015年 zhuchao. All rights reserved.
+//
+
+#import "swift-bridge.h"
+#import "Easy-Extention.h"
