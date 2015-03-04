@@ -93,16 +93,19 @@
     }];
     [self.view addSubview:self.segmentedControl];
     
-    [[RACObserve(self.tableView1, contentOffset)
-     filter:^BOOL(id value) {
-         @strongify(self);
-         return self.tableView1.contentOffset.y<0;
-     }]
+    [RACObserve(self.tableView1, contentOffset)
     subscribeNext:^(id x) {
         @strongify(self);
+        
         CGRect frame = self.segmentedControl.frame;
-        frame.origin.y = -self.tableView1.contentOffset.y - 40 +64;
-        self.segmentedControl.frame = frame;
+        if(self.tableView1.contentOffset.y<0){
+            frame.origin.y = -self.tableView1.contentOffset.y - 40 +64;
+            self.segmentedControl.frame = frame;
+        }else if(frame.origin.y != - 40 +64){
+            CGRect frame = self.segmentedControl.frame;
+            frame.origin.y = - 40 +64;
+            self.segmentedControl.frame = frame;
+        }
     }];
     
     [self.tableView1 setContentOffset:CGPointMake(0, -self.tableView1.contentInset.top) animated:NO];
