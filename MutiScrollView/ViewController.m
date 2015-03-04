@@ -54,19 +54,24 @@
     
     [self.scrollView endWithHorizontalView:_tableView2];
     
+    @weakify(self);
     [[RACObserve(self.tableView1, contentOffset)
      filter:^BOOL(id value) {
+         @strongify(self);
          return !CGPointEqualToPoint(self.tableView1.contentOffset, self.tableView2.contentOffset);
      }]
      subscribeNext:^(id x) {
+         @strongify(self);
          self.tableView2.contentOffset = self.tableView1.contentOffset;
     }];
     
     [[RACObserve(self.tableView2, contentOffset)
       filter:^BOOL(id value) {
+          @strongify(self);
           return !CGPointEqualToPoint(self.tableView1.contentOffset, self.tableView2.contentOffset);
       }]
      subscribeNext:^(id x) {
+         @strongify(self);
          self.tableView1.contentOffset = self.tableView2.contentOffset;
      }];
     
@@ -80,7 +85,8 @@
 //    self.segmentedControl.font = [UIFont fontWithName:XinGothic size:17.0f];
     self.segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    @weakify(self);
+
+    
     [self.segmentedControl setIndexChangeBlock:^(NSInteger index) {
         @strongify(self);
         [self.scrollView scrollRectToVisible:CGRectMake(self.scrollView.width * index, 0, self.scrollView.width, self.scrollView.height) animated:YES];
@@ -89,10 +95,11 @@
     
     [[RACObserve(self.tableView1, contentOffset)
      filter:^BOOL(id value) {
+         @strongify(self);
          return self.tableView1.contentOffset.y<0;
      }]
     subscribeNext:^(id x) {
-
+        @strongify(self);
         CGRect frame = self.segmentedControl.frame;
         frame.origin.y = -self.tableView1.contentOffset.y - 40 +64;
         self.segmentedControl.frame = frame;
