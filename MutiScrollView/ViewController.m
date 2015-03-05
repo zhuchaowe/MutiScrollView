@@ -43,13 +43,12 @@
     [_tableView1 alignLeadingEdgeWithView:_tableView1.superview predicate:@"0"];
 //    [self.scrollView addHorizontalSubView:_tableView1 atIndex:0];
 
-    
     _tableView2 = [[MUTableView alloc]init];
     _tableView2.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
     [self.scrollView.contentView addSubview:_tableView2];
     [_tableView2 constrainWidthToView:self.scrollView.superview predicate:@"0"];
     [_tableView2 alignTop:@"64" bottom:@"0" toView:_tableView2.superview];
-    [_tableView2 alignLeadingEdgeWithView:_tableView2.superview predicate:@"320"];
+    [_tableView2 constrainLeadingSpaceToView:_tableView1 predicate:@"0"];
     
     
     [self.scrollView endWithHorizontalView:_tableView2];
@@ -96,7 +95,6 @@
     [RACObserve(self.tableView1, contentOffset)
     subscribeNext:^(id x) {
         @strongify(self);
-        
         CGRect frame = self.segmentedControl.frame;
         if(self.tableView1.contentOffset.y<0){
             frame.origin.y = -self.tableView1.contentOffset.y - 40 +64;
@@ -112,11 +110,18 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
+    NSLog(@"%@",NSStringFromCGRect(self.scrollView.contentView.frame));
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGFloat pageWidth = scrollView.frame.size.width;
