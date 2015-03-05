@@ -11,6 +11,11 @@
 #import "HMSegmentedControl.h"
 #import "HeaderView.h"
 
+#define ContentInsetTop 220
+#define HeightOfTabBar 40
+#define AlignTop 104
+#define AlignTopString @"104"
+
 @interface ViewController ()<UIScrollViewDelegate>
 @property(nonatomic,retain)SceneScrollView *scrollView;
 @property(nonatomic,retain)MUTableView *tableView1;
@@ -25,9 +30,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-
-    
-    
     _scrollView = [[SceneScrollView alloc]init];
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.pagingEnabled = YES;
@@ -39,26 +41,23 @@
     
     [self.scrollView addHorizontalContentView];
     
-
-    
     [self.scrollView horizontalAlignTopWithView:self.scrollView.superview predicate:@"0"];
     [self.scrollView horizontalAlignBottomWithView:self.scrollView.superview predicate:@"0"];
     [self.scrollView alignLeading:@"0" trailing:@"0" toView:self.scrollView.superview];
     
     
     _tableView1 = [[MUTableView alloc]init];
-    _tableView1.contentInset = UIEdgeInsetsMake(220, 0, 0, 0);
+    _tableView1.contentInset = UIEdgeInsetsMake(ContentInsetTop, 0, 0, 0);
     [self.scrollView.contentView addSubview:_tableView1];
     [_tableView1 constrainWidthToView:self.scrollView.superview predicate:@"0"];
-    [_tableView1 alignTop:@"104" bottom:@"0" toView:_tableView1.superview];
+    [_tableView1 alignTop:AlignTopString bottom:@"0" toView:_tableView1.superview];
     [_tableView1 alignLeadingEdgeWithView:_tableView1.superview predicate:@"0"];
-//    [self.scrollView addHorizontalSubView:_tableView1 atIndex:0];
 
     _tableView2 = [[MUTableView alloc]init];
-    _tableView2.contentInset = UIEdgeInsetsMake(220, 0, 0, 0);
+    _tableView2.contentInset = UIEdgeInsetsMake(ContentInsetTop, 0, 0, 0);
     [self.scrollView.contentView addSubview:_tableView2];
     [_tableView2 constrainWidthToView:self.scrollView.superview predicate:@"0"];
-    [_tableView2 alignTop:@"104" bottom:@"0" toView:_tableView2.superview];
+    [_tableView2 alignTop:AlignTopString bottom:@"0" toView:_tableView2.superview];
     [_tableView2 constrainLeadingSpaceToView:_tableView1 predicate:@"0"];
     
     [self.scrollView endWithHorizontalView:_tableView2];
@@ -84,15 +83,13 @@
          self.tableView1.contentOffset = self.tableView2.contentOffset;
      }];
     
-    
-    
-    CGRect rect = CGRectMake(0, 0, self.view.width, 324);
+    CGRect rect = CGRectMake(0, 0, self.view.width, AlignTop + ContentInsetTop - HeightOfTabBar);
     _header = [[HeaderView alloc]init];
     _header.frame = rect;
     [self.view addSubview:_header];
     
     
-    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, self.view.width, HeightOfTabBar)];
     self.segmentedControl.sectionTitles = @[@"tab1", @"tab2"];
     self.segmentedControl.selectedSegmentIndex = 0;
     self.segmentedControl.backgroundColor = [UIColor yellowColor];
@@ -115,25 +112,20 @@
         @strongify(self);
         CGRect frame = self.segmentedControl.frame;
         if(self.tableView1.contentOffset.y<0){
-            frame.origin.y = -self.tableView1.contentOffset.y+64;
+            frame.origin.y = -self.tableView1.contentOffset.y + AlignTop - HeightOfTabBar;
             self.segmentedControl.frame = frame;
-            
-            
-            CGFloat offset = -220 - self.tableView1.contentOffset.y;
+            CGFloat offset = - ContentInsetTop - self.tableView1.contentOffset.y;
             if (offset >0) {
                 self.header.frame = CGRectMake(rect.origin.x-offset,rect.origin.y - offset, rect.size.width+ offset * 2, rect.size.height + offset*2);
             }else{
                 self.header.frame = CGRectMake(rect.origin.x,rect.origin.y + offset, rect.size.width, rect.size.height);
             }
-            
-        }else if(frame.origin.y != 64){
+        }else if(frame.origin.y != AlignTop - HeightOfTabBar){
             CGRect frame = self.segmentedControl.frame;
-            frame.origin.y = 64;
+            frame.origin.y = AlignTop - HeightOfTabBar;
             self.segmentedControl.frame = frame;
-            self.header.frame = CGRectMake(rect.origin.x,rect.origin.y - 220, rect.size.width, rect.size.height);
+            self.header.frame = CGRectMake(rect.origin.x,rect.origin.y - ContentInsetTop, rect.size.width, rect.size.height);
         }
-        
-
     }];
     
     [self.tableView1 setContentOffset:CGPointMake(0, -self.tableView1.contentInset.top) animated:NO];
