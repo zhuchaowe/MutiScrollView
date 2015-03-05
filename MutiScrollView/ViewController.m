@@ -31,8 +31,8 @@
     
     [self.scrollView addHorizontalContentView];
     
-    [self.scrollView horizontalAlignTopWithToView:self.scrollView.superview predicate:@"0"];
-    [self.scrollView horizontalAlignBottomWithToView:self.scrollView.superview predicate:@"0"];
+    [self.scrollView horizontalAlignTopWithView:self.scrollView.superview predicate:@"0"];
+    [self.scrollView horizontalAlignBottomWithView:self.scrollView.superview predicate:@"0"];
     [self.scrollView alignLeading:@"0" trailing:@"0" toView:self.scrollView.superview];
 
     _tableView1 = [[MUTableView alloc]init];
