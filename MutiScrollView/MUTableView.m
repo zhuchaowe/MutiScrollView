@@ -19,6 +19,7 @@
     if(self){
         self.dataSource = self;
         self.delegate = self;
+        self.backgroundColor = [UIColor clearColor];
         
         [self registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     }

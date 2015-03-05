@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B7409FE1AA84148008F53E3 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7409FD1AA84148008F53E3 /* HeaderView.m */; };
 		5B7485AC1AA6E3500092C21E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7485AB1AA6E3500092C21E /* main.m */; };
 		5B7485AF1AA6E3500092C21E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7485AE1AA6E3500092C21E /* AppDelegate.m */; };
 		5B7485B21AA6E3500092C21E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7485B11AA6E3500092C21E /* ViewController.m */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		2227275827A4A3559570CDEC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5B7409FC1AA84148008F53E3 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		5B7409FD1AA84148008F53E3 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		5B7485A61AA6E3500092C21E /* MutiScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutiScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7485AA1AA6E3500092C21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7485AB1AA6E3500092C21E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B7409FB1AA84133008F53E3 /* headerView */ = {
+			isa = PBXGroup;
+			children = (
+				5B7409FC1AA84148008F53E3 /* HeaderView.h */,
+				5B7409FD1AA84148008F53E3 /* HeaderView.m */,
+			);
+			name = headerView;
+			sourceTree = "<group>";
+		};
 		5B74859D1AA6E3500092C21E = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		5B7485A81AA6E3500092C21E /* MutiScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				5B7409FB1AA84133008F53E3 /* headerView */,
 				5B7485D01AA6E7CF0092C21E /* tableView */,
 				5B7485AD1AA6E3500092C21E /* AppDelegate.h */,
 				5B7485AE1AA6E3500092C21E /* AppDelegate.m */,
@@ -290,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7485B21AA6E3500092C21E /* ViewController.m in Sources */,
+				5B7409FE1AA84148008F53E3 /* HeaderView.m in Sources */,
 				5B7485D31AA6E7EB0092C21E /* MUTableView.m in Sources */,
 				5B7485AF1AA6E3500092C21E /* AppDelegate.m in Sources */,
 				5B7485AC1AA6E3500092C21E /* main.m in Sources */,
